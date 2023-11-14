@@ -5,7 +5,7 @@ cd ~
 git clone https://github.com/azdadanass/orangeinit.git
 <br>
 <br>
-# Execution du script d'installation**
+# Execution du script d'installation
 <br>
 cd orangeinit
 <br>
