@@ -11,6 +11,7 @@ sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_passwo
 mysql -u root -proot -e "CREATE USER 'tomcat'@'%' IDENTIFIED BY 'tacmot';"
 mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'tomcat'@'%';"
 mysql -u root -proot -e "FLUSH PRIVILEGES;"
+mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS orange;"
 
 # Configuration de la base de donnée 
 sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
