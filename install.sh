@@ -48,6 +48,14 @@ sudo service docker restart
 sudo apt update
 sudo apt -y install nginx
 
+# Configuration nginx
+sudo mv  /etc/nginx/sites-enabled/default  /etc/nginx/sites-enabled/default.oldsud
+sudo cp nginx/default /etc/nginx/sites-enabled/
+
+# Redemarrage docker
+sudo service nginx restart
+
+
 
 echo "Merci de redemarrer la machine"
 
