@@ -1,0 +1,4 @@
+git clone https://github.com/azdadanass/orangeinit.git
+cd orangeinit
+chmod +x *.sh
+./install.sh
