@@ -2,8 +2,8 @@ client_max_body_size 100M;
 
 server {
     listen 80;
-    server_name apps.aa.com;
-    access_log /var/log/nginx/apps.aa.com.com.access.log;
+    server_name apps.example.com;
+    access_log /var/log/nginx/apps.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -16,8 +16,8 @@ server {
 
 server {
     listen 80;
-    server_name iadmin.aa.com;
-    access_log /var/log/nginx/iadmin.aa.com.com.access.log;
+    server_name iadmin.example.com;
+    access_log /var/log/nginx/iadmin.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -30,8 +30,8 @@ server {
 
 server {
     listen 80;
-    server_name sdm.aa.com;
-    access_log /var/log/nginx/sdm.aa.com.com.access.log;
+    server_name sdm.example.com;
+    access_log /var/log/nginx/sdm.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -44,8 +44,8 @@ server {
 
 server {
     listen 80;
-    server_name ilogistics.aa.com;
-    access_log /var/log/nginx/ilogistics.aa.com.com.access.log;
+    server_name ilogistics.example.com;
+    access_log /var/log/nginx/ilogistics.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -58,8 +58,8 @@ server {
 
 server {
     listen 80;
-    server_name public.aa.com;
-    access_log /var/log/nginx/public.aa.com.com.access.log;
+    server_name public.example.com;
+    access_log /var/log/nginx/public.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -72,8 +72,8 @@ server {
 
 server {
     listen 80;
-    server_name qr.aa.com;
-    access_log /var/log/nginx/qr.aa.com.com.access.log;
+    server_name qr.example.com;
+    access_log /var/log/nginx/qr.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;
@@ -86,8 +86,8 @@ server {
 
 server {
     listen 80;
-    server_name ibuy.aa.com;
-    access_log /var/log/nginx/ibuy.aa.com.com.access.log;
+    server_name ibuy.example.com;
+    access_log /var/log/nginx/ibuy.access.log;
 
     location / {
         proxy_set_header X-Forwarded-Host $host;

@@ -50,7 +50,7 @@ sudo apt update
 sudo apt -y install nginx
 
 # Configuration nginx
-sudo mv  /etc/nginx/sites-enabled/default  /etc/nginx/sites-enabled/default.oldsud
+sudo rm  /etc/nginx/sites-enabled/default
 sudo cp nginx/default /etc/nginx/sites-enabled/
 
 # Redemarrage docker
