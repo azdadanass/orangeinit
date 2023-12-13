@@ -51,12 +51,19 @@ sudo apt -y install nginx
 
 # Configuration nginx
 sudo rm  /etc/nginx/sites-enabled/default
-sudo cp nginx/default /etc/nginx/sites-enabled/
 
 # Redemarrage docker
 sudo service nginx restart
 
 
+#############################################################
+# Installation p7zip-full pour les compressions
+#############################################################
+
+sudo apt -y install p7zip-full
+
 
 echo "Merci de redemarrer la machine"
+
+
 
