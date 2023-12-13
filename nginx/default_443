@@ -1,0 +1,205 @@
+client_max_body_size 100M;
+
+##############################################################
+# apps
+##############################################################
+
+server {
+       listen 80;
+       server_name apps.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name apps.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/apps.crt;
+    ssl_certificate_key       /etc/nginx/ssl/apps.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/apps.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8080;
+    }
+}
+
+##############################################################
+# iadmin
+##############################################################
+
+server {
+       listen 80;
+       server_name iadmin.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name iadmin.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/iadmin.crt;
+    ssl_certificate_key       /etc/nginx/ssl/iadmin.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/iadmin.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8081;
+    }
+}
+
+##############################################################
+# sdm
+##############################################################
+
+server {
+       listen 80;
+       server_name sdm.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name sdm.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/sdm.crt;
+    ssl_certificate_key       /etc/nginx/ssl/sdm.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/sdm.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8082;
+    }
+}
+
+##############################################################
+# ilogistics
+##############################################################
+
+server {
+       listen 80;
+       server_name ilogistics.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name ilogistics.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/ilogistics.crt;
+    ssl_certificate_key       /etc/nginx/ssl/ilogistics.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/ilogistics.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8083;
+    }
+}
+
+##############################################################
+# public
+##############################################################
+
+server {
+       listen 80;
+       server_name public.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name public.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/public.crt;
+    ssl_certificate_key       /etc/nginx/ssl/public.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/public.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8084;
+    }
+}
+
+##############################################################
+# qr
+##############################################################
+
+server {
+       listen 80;
+       server_name qr.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name qr.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/qr.crt;
+    ssl_certificate_key       /etc/nginx/ssl/qr.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/qr.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8085;
+    }
+}
+
+##############################################################
+# ibuy
+##############################################################
+
+server {
+       listen 80;
+       server_name ibuy.telodigital.orange.com;
+       return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name ibuy.telodigital.orange.com;
+    ssl_certificate           /etc/nginx/ssl/ibuy.crt;
+    ssl_certificate_key       /etc/nginx/ssl/ibuy.key;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/ibuy.access.log;
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://main_server_ip:8086;
+    }
+}
+

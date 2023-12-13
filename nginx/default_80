@@ -2,7 +2,7 @@ client_max_body_size 100M;
 
 server {
     listen 80;
-    server_name apps.example.com;
+    server_name apps.telodigital.orange.com;
     access_log /var/log/nginx/apps.access.log;
 
     location / {
@@ -10,13 +10,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8080;
+        proxy_pass http://main_server_ip:8080;
     }
 }
 
 server {
     listen 80;
-    server_name iadmin.example.com;
+    server_name iadmin.telodigital.orange.com;
     access_log /var/log/nginx/iadmin.access.log;
 
     location / {
@@ -24,13 +24,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8081;
+        proxy_pass http://main_server_ip:8081;
     }
 }
 
 server {
     listen 80;
-    server_name sdm.example.com;
+    server_name sdm.telodigital.orange.com;
     access_log /var/log/nginx/sdm.access.log;
 
     location / {
@@ -38,13 +38,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8082;
+        proxy_pass http://main_server_ip:8082;
     }
 }
 
 server {
     listen 80;
-    server_name ilogistics.example.com;
+    server_name ilogistics.telodigital.orange.com;
     access_log /var/log/nginx/ilogistics.access.log;
 
     location / {
@@ -52,13 +52,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8083;
+        proxy_pass http://main_server_ip:8083;
     }
 }
 
 server {
     listen 80;
-    server_name public.example.com;
+    server_name public.telodigital.orange.com;
     access_log /var/log/nginx/public.access.log;
 
     location / {
@@ -66,13 +66,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8084;
+        proxy_pass http://main_server_ip:8084;
     }
 }
 
 server {
     listen 80;
-    server_name qr.example.com;
+    server_name qr.telodigital.orange.com;
     access_log /var/log/nginx/qr.access.log;
 
     location / {
@@ -80,13 +80,13 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8085;
+        proxy_pass http://main_server_ip:8085;
     }
 }
 
 server {
     listen 80;
-    server_name ibuy.example.com;
+    server_name ibuy.telodigital.orange.com;
     access_log /var/log/nginx/ibuy.access.log;
 
     location / {
@@ -94,6 +94,6 @@ server {
         proxy_set_header X-Forwarded-Server $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://localhost:8086;
+        proxy_pass http://main_server_ip:8086;
     }
 }
