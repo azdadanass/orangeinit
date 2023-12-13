@@ -1,5 +1,5 @@
 
-backup_server_ip=192.168.1.2
+
 
 log_folder=~/log
 tmp_folder=~/tmp
@@ -13,10 +13,9 @@ mkdir -p $log_folder
 mkdir -p $tmp_folder
 mkdir -p $backup_folder
 
-ssh-copy-id azdad@$backup_server_ip
+ssh-copy-id backup_server_user@backup_server_ip
 
-ssh azdad@$backup_server_ip "mkdir -p ~/backup/db"
-
+ssh backup_server_user@backup_server_ip "mkdir -p ~/backup/db"
 
 mysqldump \
 	--defaults-extra-file=~/orangeinit/config.cnf \
@@ -26,12 +25,9 @@ mysqldump \
 	"orange"  \
 	--databases  > $dump_file  2>> $error_log
 
-
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $backup_file $dump_file  2>> $error_log
 
-
-
-scp -r $backup_file azdad@$backup_server_ip:/home/azdad/backup/db
+scp -r $backup_file backup_server_user@backup_server_ip:/home/backup_server_user/backup/db
 
 rm $dump_file 2>> $error_log
 
