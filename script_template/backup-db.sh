@@ -1,6 +1,4 @@
 
-
-
 log_folder=~/log
 tmp_folder=~/tmp
 backup_folder=~/backup/db
@@ -12,8 +10,6 @@ backup_file=$backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
 mkdir -p $log_folder
 mkdir -p $tmp_folder
 mkdir -p $backup_folder
-
-ssh-copy-id backup_server_user@backup_server_ip
 
 ssh backup_server_user@backup_server_ip "mkdir -p ~/backup/db"
 
