@@ -18,3 +18,4 @@ ssh-copy-id $backup_server_user@$backup_server_ip
 
 
 chmod +x ~/orangeinit/backup-db.sh
+chmod +x ~/orangeinit/backup-files.sh
