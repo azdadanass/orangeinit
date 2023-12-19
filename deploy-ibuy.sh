@@ -1,4 +1,5 @@
 mkdir -p ~/files
+mkdir -p ~/log
 
 docker stop ibuy-orange
 docker rm ibuy-orange

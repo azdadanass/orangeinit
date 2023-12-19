@@ -1,4 +1,5 @@
 mkdir -p ~/files
+mkdir -p ~/log
 
 docker stop ilogistics-orange
 docker rm ilogistics-orange
