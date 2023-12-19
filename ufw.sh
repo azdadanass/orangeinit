@@ -16,6 +16,9 @@ sudo ufw allow 443
 # allow portainer port
 sudo ufw allow 9443
 
+# allow ncpa (nagios) port
+sudo ufw allow 5693
+
 # allow mysql only  for docker LAN
 sudo ufw allow from 172.17.0.0/24 to any port 3306
 
