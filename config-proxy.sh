@@ -65,7 +65,7 @@ echo -e  " }" >> ~/.docker/config.json
 echo -e  "}" >> ~/.docker/config.json
 
 
-echo "ces fichiers ont été modifiés"
+echo "ces 4 fichiers ont été modifiés"
 echo "/etc/environment"
 echo "/etc/systemd/system/docker.service.d/http-proxy.conf"
 echo "~/.docker/config.json"
