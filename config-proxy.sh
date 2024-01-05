@@ -24,6 +24,12 @@ if ! grep -q NO_PROXY "/etc/environment"; then
 fi
 
 
+if ! grep -q Acquire::http::Proxy "/etc/apt/apt.conf"; then
+  echo "Acquire::http::Proxy \"$http_proxy\";" | sudo tee -a /etc/apt/apt.conf
+ else
+  sudo sed -i "/Acquire::http::Proxy/c\Acquire::http::Proxy \"$http_proxy\";" /etc/apt/apt.conf
+fi
+
 
 
 
