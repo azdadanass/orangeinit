@@ -2,7 +2,7 @@ client_max_body_size 100M;
 
 server {
     listen 80;
-    server_name apps.telodigital.orange.com;
+    server_name appsdns;
     access_log /var/log/nginx/apps.access.log;
 
     location / {
@@ -16,7 +16,7 @@ server {
 
 server {
     listen 80;
-    server_name iadmin.telodigital.orange.com;
+    server_name iadmindns;
     access_log /var/log/nginx/iadmin.access.log;
 
     location / {
@@ -30,7 +30,7 @@ server {
 
 server {
     listen 80;
-    server_name sdm.telodigital.orange.com;
+    server_name sdmdns;
     access_log /var/log/nginx/sdm.access.log;
 
     location / {
@@ -44,7 +44,7 @@ server {
 
 server {
     listen 80;
-    server_name ilogistics.telodigital.orange.com;
+    server_name ilogisticsdns;
     access_log /var/log/nginx/ilogistics.access.log;
 
     location / {
@@ -58,7 +58,7 @@ server {
 
 server {
     listen 80;
-    server_name public.telodigital.orange.com;
+    server_name publicdns;
     access_log /var/log/nginx/public.access.log;
 
     location / {
@@ -72,7 +72,7 @@ server {
 
 server {
     listen 80;
-    server_name qr.telodigital.orange.com;
+    server_name qrdns;
     access_log /var/log/nginx/qr.access.log;
 
     location / {
@@ -86,7 +86,7 @@ server {
 
 server {
     listen 80;
-    server_name ibuy.telodigital.orange.com;
+    server_name ibuydns;
     access_log /var/log/nginx/ibuy.access.log;
 
     location / {

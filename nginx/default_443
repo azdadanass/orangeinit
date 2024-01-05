@@ -6,13 +6,13 @@ client_max_body_size 100M;
 
 server {
        listen 80;
-       server_name apps.telodigital.orange.com;
+       server_name appsdns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name apps.telodigital.orange.com;
+    server_name appsdns;
     ssl_certificate           /etc/nginx/ssl/apps.crt;
     ssl_certificate_key       /etc/nginx/ssl/apps.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -35,13 +35,13 @@ server {
 
 server {
        listen 80;
-       server_name iadmin.telodigital.orange.com;
+       server_name iadmindns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name iadmin.telodigital.orange.com;
+    server_name iadmindns;
     ssl_certificate           /etc/nginx/ssl/iadmin.crt;
     ssl_certificate_key       /etc/nginx/ssl/iadmin.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -64,13 +64,13 @@ server {
 
 server {
        listen 80;
-       server_name sdm.telodigital.orange.com;
+       server_name sdmdns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name sdm.telodigital.orange.com;
+    server_name sdmdns;
     ssl_certificate           /etc/nginx/ssl/sdm.crt;
     ssl_certificate_key       /etc/nginx/ssl/sdm.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -93,13 +93,13 @@ server {
 
 server {
        listen 80;
-       server_name ilogistics.telodigital.orange.com;
+       server_name ilogisticsdns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ilogistics.telodigital.orange.com;
+    server_name ilogisticsdns;
     ssl_certificate           /etc/nginx/ssl/ilogistics.crt;
     ssl_certificate_key       /etc/nginx/ssl/ilogistics.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -122,13 +122,13 @@ server {
 
 server {
        listen 80;
-       server_name public.telodigital.orange.com;
+       server_name publicdns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name public.telodigital.orange.com;
+    server_name publicdns;
     ssl_certificate           /etc/nginx/ssl/public.crt;
     ssl_certificate_key       /etc/nginx/ssl/public.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -151,13 +151,13 @@ server {
 
 server {
        listen 80;
-       server_name qr.telodigital.orange.com;
+       server_name qrdns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name qr.telodigital.orange.com;
+    server_name qrdns;
     ssl_certificate           /etc/nginx/ssl/qr.crt;
     ssl_certificate_key       /etc/nginx/ssl/qr.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -180,13 +180,13 @@ server {
 
 server {
        listen 80;
-       server_name ibuy.telodigital.orange.com;
+       server_name ibuydns;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ibuy.telodigital.orange.com;
+    server_name ibuydns;
     ssl_certificate           /etc/nginx/ssl/ibuy.crt;
     ssl_certificate_key       /etc/nginx/ssl/ibuy.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;

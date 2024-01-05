@@ -10,12 +10,12 @@ while true; do
         http) 
 			sudo cp ~/orangeinit/nginx/default_80 /etc/nginx/sites-enabled/default
 			sudo sed -i "s/main_server_ip/$main_server_ip/g" /etc/nginx/sites-enabled/default
-			sudo sed -i "s/.telodigital.orange.com/$dns/g" /etc/nginx/sites-enabled/default
+			sudo sed -i "s/dns/$dns/g" /etc/nginx/sites-enabled/default
 			break;;
         https) 
 			sudo cp ~/orangeinit/nginx/default_443 /etc/nginx/sites-enabled/default
 			sudo sed -i "s/main_server_ip/$main_server_ip/g" /etc/nginx/sites-enabled/default
-			sudo sed -i "s/.telodigital.orange.com/$dns/g" /etc/nginx/sites-enabled/default
+			sudo sed -i "s/dns/$dns/g" /etc/nginx/sites-enabled/default
 			break;;
         * ) echo "Please answer http or https.";;
     esac
