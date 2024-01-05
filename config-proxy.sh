@@ -59,7 +59,7 @@ echo -e  " "proxies": {" >> ~/.docker/config.json
 echo -e  "   "default": {" >> ~/.docker/config.json
 echo -e  "     "httpProxy": '$http_proxy'," >> ~/.docker/config.json
 echo -e  "     "httpsProxy": '$http_proxy'," >> ~/.docker/config.json
-echo -e  "     "noProxy": "localhost,127.0.0.1,::1"" >> ~/.docker/config.json
+echo -e  "     "noProxy": 'localhost,127.0.0.1,::1'" >> ~/.docker/config.json
 echo -e  "   }" >> ~/.docker/config.json
 echo -e  " }" >> ~/.docker/config.json
 echo -e  "}" >> ~/.docker/config.json

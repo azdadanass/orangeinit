@@ -1,6 +1,15 @@
 read -p "Enter mysql datadir path [/app/dbdata] :" datadir
 datadir=${datadir:-/app/dbdata}
 
+mkdir $datadir
+if [ $? -ne 0 ] ; then
+    echo "fatal --> exit"
+    exit
+fi
+
+
+
+
 sudo systemctl stop mysql
 mkdir -p $datadir
 sudo rsync -av /var/lib/mysql $datadir
