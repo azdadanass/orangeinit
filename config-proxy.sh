@@ -25,12 +25,17 @@ fi
 
 
 
+
+
 sudo mkdir -p /etc/systemd/system/docker.service.d
 
 echo "[Service]" | sudo tee  /etc/systemd/system/docker.service.d/http-proxy.conf
 echo "Environment='HTTP_PROXY=$http_proxy'" | sudo tee -a  /etc/systemd/system/docker.service.d/http-proxy.conf
 echo "Environment='HTTPS_PROXY=$https_proxy'" | sudo tee -a  /etc/systemd/system/docker.service.d/http-proxy.conf
 echo "Environment='NO_PROXY=localhost,127.0.0.1,::1'" | sudo tee -a  /etc/systemd/system/docker.service.d/http-proxy.conf
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 
 
 
