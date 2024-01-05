@@ -65,21 +65,13 @@ echo -e  " }" >> ~/.docker/config.json
 echo -e  "}" >> ~/.docker/config.json
 
 
-echo
-echo
-echo "/etc/environment :"
-echo
-cat /etc/environment
-echo
-echo
-echo "cat /etc/systemd/system/docker.service.d/http-proxy.conf :"
-echo
-cat /etc/systemd/system/docker.service.d/http-proxy.conf
-echo
-echo
-echo "~/.docker/config.json :"
-echo
-cat ~/.docker/config.json
+echo "ces fichiers ont été modifiés"
+echo "/etc/environment"
+echo "/etc/systemd/system/docker.service.d/http-proxy.conf"
+echo "~/.docker/config.json"
+echo "/etc/apt/apt.conf"
+
+
 
 
 echo "Merci de redemarrer la machine"
