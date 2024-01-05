@@ -30,7 +30,7 @@ if ! grep -q Acquire::http::Proxy "/etc/apt/apt.conf"; then
   sudo sed -i "/Acquire::http::Proxy/c\Acquire::http::Proxy \"$http_proxy\";" /etc/apt/apt.conf
 fi
 
-if ! grep -q Acquire::http::Proxy "/etc/apt/apt.conf"; then
+if ! grep -q Acquire::https::Proxy "/etc/apt/apt.conf"; then
   echo "Acquire::https::Proxy \"$http_proxy\";" | sudo tee -a /etc/apt/apt.conf
  else
   sudo sed -i "/Acquire::https::Proxy/c\Acquire::https::Proxy \"$http_proxy\";" /etc/apt/apt.conf
