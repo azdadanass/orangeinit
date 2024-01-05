@@ -40,7 +40,7 @@ sudo systemctl restart docker
 
 
 
-
+mkdir -p ~/.docker
 
 echo -e  "{" > ~/.docker/config.json
 echo -e  " "proxies": {" >> ~/.docker/config.json
