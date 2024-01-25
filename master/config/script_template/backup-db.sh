@@ -1,22 +1,17 @@
-
-
-
-
-
-
 log_folder=~/log
 tmp_folder=~/tmp
-
-
-error_log=$log_folder/export_db_error.log
-dump_file=$tmp_folder/orange.sql
-backup_file=backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
+backup_folder = /backup/db
 
 mkdir -p $log_folder
 mkdir -p $tmp_folder
 mkdir -p backup_folder
 
-ssh backup_server_user@backup_server_ip "mkdir -p ~/backup/db"
+
+error_log=$log_folder/export_db_error.log
+dump_file=$tmp_folder/orange.sql
+backup_file=$backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
+
+
 
 mysqldump \
 	--defaults-extra-file=~/scripts/config.cnf \
@@ -28,7 +23,8 @@ mysqldump \
 
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $backup_file $dump_file  2>> $error_log
 
-scp -r $backup_file backup_server_user@backup_server_ip:/home/backup_server_user/backup/db
+ssh backup_server_user@backup_server_ip "mkdir -p $backup_folder"
+scp -r $backup_file backup_server_user@backup_server_ip:$backup_folder
 
-rm $dump_file 2>> $error_log
+find $backup_folder -type f -name "orange*" -mtime +7 -delete 2>> $error_log
 

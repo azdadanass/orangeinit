@@ -7,3 +7,4 @@ $script_dir/install/ncpa.sh
 $script_dir/install/mysql.sh
 
 cp -r $script_dir/scripts ~
+chmod +x ~/scripts/*.sh
