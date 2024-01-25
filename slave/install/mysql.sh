@@ -44,6 +44,10 @@ echo "datadir = $datadir/mysql" | sudo tee -a /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo systemctl restart mysql
 
 
+echo -e "\033[0;32m"
+echo -e "Config slave (you should wait for master server script to finish) "
+echo -e "\033[0m"
+
 read -p "Enter master address [192.168.1.90] : " master_ip
 master_ip=${master_ip:-192.168.1.90}
 
