@@ -1,5 +1,5 @@
 log_folder=~/log
-backup_folder = /backup
+backup_folder=/backup
 
 mkdir -p $log_folder
 mkdir -p backup_folder

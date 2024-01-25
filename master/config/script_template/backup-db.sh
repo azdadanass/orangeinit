@@ -1,6 +1,6 @@
 log_folder=~/log
 tmp_folder=~/tmp
-backup_folder = /backup/db
+backup_folder=/backup/db
 
 mkdir -p $log_folder
 mkdir -p $tmp_folder
