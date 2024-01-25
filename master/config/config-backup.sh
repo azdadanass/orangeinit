@@ -1,8 +1,10 @@
 script_dir=$(dirname $0)
 
-read -p "Enter backup folder [/backup] : " backup_folder
-backup_folder=${backup_folder:-/backup}
-
+if [ ! -d "/backup/" ]
+then
+	echo folder /backup not found
+	exit
+fi
 
 read -p "Enter backup_server_ip [192.168.1.91] : " backup_server_ip
 backup_server_ip=${backup_server_ip:-192.168.1.91}
@@ -14,12 +16,12 @@ backup_server_user=${backup_server_user:-admin}
 cp $script_dir/config.cnf ~/scripts
 
 cp $script_dir/script_template/backup-db.sh ~/scripts/backup-db.sh
-sed -i "s/backup_folder/$backup_folder/g" ~/scripts/backup-db.sh
+sed -i "s/backup_folder/\/backup/g" ~/scripts/backup-db.sh
 sed -i "s/backup_server_ip/$backup_server_ip/g" ~/scripts/backup-db.sh
 sed -i "s/backup_server_user/$backup_server_user/g" ~/scripts/backup-db.sh
 
 cp $script_dir/script_template/backup-files.sh ~/scripts/backup-files.sh
-sed -i "s/backup_folder/$backup_folder/g" ~/scripts/backup-files.sh
+sed -i "s/backup_folder/\/backup/g" ~/scripts/backup-files.sh
 sed -i "s/backup_server_ip/$backup_server_ip/g" ~/scripts/backup-files.sh
 sed -i "s/backup_server_user/$backup_server_user/g" ~/scripts/backup-files.sh
 

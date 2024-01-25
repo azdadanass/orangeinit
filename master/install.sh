@@ -6,4 +6,4 @@ $script_dir/install/p7zip.sh
 $script_dir/install/ncpa.sh
 $script_dir/install/mysql.sh
 
-cp $script_dir/scripts ~
+cp -r $script_dir/scripts ~
