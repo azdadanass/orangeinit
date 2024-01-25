@@ -11,7 +11,7 @@ read -p "Enter backup_server_user [admin] : " backup_server_user
 backup_server_user=${backup_server_user:-admin}
 
 
-
+cp $script_dir/config.cnf ~/scripts
 
 cp $script_dir/script_template/backup-db.sh ~/scripts/backup-db.sh
 sed -i "s/backup_folder/$backup_folder/g" ~/scripts/backup-db.sh

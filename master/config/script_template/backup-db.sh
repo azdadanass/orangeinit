@@ -19,7 +19,7 @@ mkdir -p backup_folder
 ssh backup_server_user@backup_server_ip "mkdir -p ~/backup/db"
 
 mysqldump \
-	--defaults-extra-file=~/orangeinit/config.cnf \
+	--defaults-extra-file=~/scripts/config.cnf \
 	--max_allowed_packet=1G \
 	--default-character-set=utf8 \
 	--single-transaction=TRUE \
