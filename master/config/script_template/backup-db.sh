@@ -1,15 +1,20 @@
 
+
+
+
+
+
 log_folder=~/log
 tmp_folder=~/tmp
-backup_folder=~/backup/db
+
 
 error_log=$log_folder/export_db_error.log
 dump_file=$tmp_folder/orange.sql
-backup_file=$backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
+backup_file=backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
 
 mkdir -p $log_folder
 mkdir -p $tmp_folder
-mkdir -p $backup_folder
+mkdir -p backup_folder
 
 ssh backup_server_user@backup_server_ip "mkdir -p ~/backup/db"
 

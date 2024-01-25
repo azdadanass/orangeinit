@@ -5,3 +5,5 @@ $script_dir/install/nginx.sh
 $script_dir/install/p7zip.sh
 $script_dir/install/ncpa.sh
 $script_dir/install/mysql.sh
+
+cp $script_dir/scripts ~
