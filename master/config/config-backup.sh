@@ -31,4 +31,4 @@ chmod +x ~/scripts/backup-db.sh
 chmod +x ~/scripts/backup-files.sh
 
 
-(crontab -l 2>/dev/null; echo -e "00 19 * * * ~/scripts/backup-db.sh \n00 * * * * ~/scripts/backup-.sh ") | crontab -
+(crontab -l 2>/dev/null; echo -e "00 19 * * * ~/scripts/backup-db.sh \n00 * * * * ~/scripts/backup-files.sh ") | crontab -
