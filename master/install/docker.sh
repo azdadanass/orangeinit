@@ -13,7 +13,7 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 # Création de l'utilisateur unix docker
 sudo usermod -aG docker $USER
 
-su - ${USER}
+
 
 # Redemarrage docker
 sudo service docker restart

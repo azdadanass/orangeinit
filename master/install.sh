@@ -38,3 +38,7 @@ $script_dir/install/mysql.sh
 
 
 
+su - ${USER}
+
+
+
