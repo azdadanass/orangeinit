@@ -1,5 +1,9 @@
 script_dir=$(dirname $0)
 
+echo -e "\033[0;32m"
+echo -e "config backup database & files "
+echo -e "\033[0m"
+
 if [ ! -d "/backup/" ]
 then
 	echo folder /backup not found
