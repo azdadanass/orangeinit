@@ -5,10 +5,14 @@ cd /app
 git clone https://github.com/azdadanass/orangeinit.git
 ```
 
-# Execution du script d'installation
+# Execution du script d'installation master
 
 ```
-cd orangeinit
-chmod +x *.sh
-./install.sh
+/app/orangeinit/master/install.sh
+```
+
+# Execution du script d'installation slave
+
+```
+/app/orangeinit/slave/install.sh
 ```
