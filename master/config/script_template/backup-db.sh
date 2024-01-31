@@ -4,7 +4,7 @@ backup_folder=/backup/db
 
 mkdir -p $log_folder
 mkdir -p $tmp_folder
-mkdir -p backup_folder
+mkdir -p $backup_folder
 
 
 error_log=$log_folder/export_db_error.log

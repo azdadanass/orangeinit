@@ -1,7 +1,7 @@
 # Cloner le repos d'installation dans le dossier personel
 
 ```
-cd ~
+cd /app
 git clone https://github.com/azdadanass/orangeinit.git
 ```
 

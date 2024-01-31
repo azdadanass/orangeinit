@@ -18,8 +18,8 @@ mkdir -p /app/log
 mkdir -p /app/tmp
 
 
-cp -r $script_dir/scripts ~
-chmod +x ~/scripts/*.sh
+cp -r $script_dir/scripts /app
+chmod +x /app/scripts/*.sh
 
 $script_dir/install/docker.sh
 $script_dir/install/nginx.sh
