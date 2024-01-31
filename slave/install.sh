@@ -12,6 +12,8 @@ then
 	exit
 fi
 
+mkdir -p /app/log/mysql
+
 
 $script_dir/install/ncpa.sh
 $script_dir/install/mysql.sh
