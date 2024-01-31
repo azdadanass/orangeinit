@@ -12,7 +12,7 @@ then
 	exit
 fi
 
-mkdir -p /app/log/mysql
+mkdir -p /app/log
 
 
 $script_dir/install/ncpa.sh

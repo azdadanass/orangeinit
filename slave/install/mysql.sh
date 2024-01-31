@@ -26,6 +26,8 @@ mkdir -p $datadir
 sudo rsync -av /var/lib/mysql $datadir
 sudo mv /var/lib/mysql /var/lib/mysql.bak
 
+sudo rsync -av /var/log/mysql /app/log
+
 sudo sed -i "/datadir/c\datadir = $datadir/mysql" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo sed -i "/alias \/var\/lib\/mysql/c\alias \/var\/lib\/mysql\/ -> $datadir\/mysql\/," /etc/apparmor.d/tunables/alias
 echo "alias /var/log/mysql/ -> /app/log/mysql/," | sudo tee -a /etc/apparmor.d/tunables/alias

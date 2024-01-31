@@ -14,7 +14,7 @@ sudo apt -y install mysql-server
 read -p "Enter mysql datadir path [/app/dbdata] :" datadir
 datadir=${datadir:-/app/dbdata}
 
-mkdir $datadir
+mkdir -p $datadir
 if [ $? -ne 0 ] ; then
     echo "fatal --> exit"
     exit
@@ -24,6 +24,8 @@ sudo systemctl stop mysql
 mkdir -p $datadir
 sudo rsync -av /var/lib/mysql $datadir
 sudo mv /var/lib/mysql /var/lib/mysql.bak
+
+sudo rsync -av /var/log/mysql /app/log
 
 sudo sed -i "/datadir/c\datadir = $datadir/mysql" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo sed -i "/alias \/var\/lib\/mysql/c\alias \/var\/lib\/mysql\/ -> $datadir\/mysql\/," /etc/apparmor.d/tunables/alias

@@ -14,7 +14,7 @@ then
 fi
 
 
-mkdir -p /app/log/mysql
+mkdir -p /app/log
 mkdir -p /app/tmp
 
 
