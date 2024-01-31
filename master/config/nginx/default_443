@@ -6,13 +6,13 @@ client_max_body_size 100M;
 
 server {
        listen 80;
-       server_name appsdns;
+       server_name apps.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name appsdns;
+    server_name apps.orange.int;
     ssl_certificate           /etc/nginx/ssl/apps.crt;
     ssl_certificate_key       /etc/nginx/ssl/apps.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -35,13 +35,13 @@ server {
 
 server {
        listen 80;
-       server_name iadmindns;
+       server_name iadmin.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name iadmindns;
+    server_name iadmin.orange.int;
     ssl_certificate           /etc/nginx/ssl/iadmin.crt;
     ssl_certificate_key       /etc/nginx/ssl/iadmin.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -64,13 +64,13 @@ server {
 
 server {
        listen 80;
-       server_name sdmdns;
+       server_name sdm.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name sdmdns;
+    server_name sdm.orange.int;
     ssl_certificate           /etc/nginx/ssl/sdm.crt;
     ssl_certificate_key       /etc/nginx/ssl/sdm.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -93,13 +93,13 @@ server {
 
 server {
        listen 80;
-       server_name ilogisticsdns;
+       server_name ilogistics.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ilogisticsdns;
+    server_name ilogistics.orange.int;
     ssl_certificate           /etc/nginx/ssl/ilogistics.crt;
     ssl_certificate_key       /etc/nginx/ssl/ilogistics.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -122,13 +122,13 @@ server {
 
 server {
        listen 80;
-       server_name publicdns;
+       server_name public.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name publicdns;
+    server_name public.orange.int;
     ssl_certificate           /etc/nginx/ssl/public.crt;
     ssl_certificate_key       /etc/nginx/ssl/public.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -151,13 +151,13 @@ server {
 
 server {
        listen 80;
-       server_name qrdns;
+       server_name qr.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name qrdns;
+    server_name qr.orange.int;
     ssl_certificate           /etc/nginx/ssl/qr.crt;
     ssl_certificate_key       /etc/nginx/ssl/qr.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
@@ -180,13 +180,13 @@ server {
 
 server {
        listen 80;
-       server_name ibuydns;
+       server_name ibuy.orange.int;
        return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ibuydns;
+    server_name ibuy.orange.int;
     ssl_certificate           /etc/nginx/ssl/ibuy.crt;
     ssl_certificate_key       /etc/nginx/ssl/ibuy.key;
     ssl_session_cache  builtin:1000  shared:SSL:10m;

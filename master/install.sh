@@ -16,6 +16,7 @@ fi
 
 mkdir -p /app/log
 mkdir -p /app/tmp
+mkdir -p /app/certs
 
 
 cp -r $script_dir/scripts /app
@@ -27,6 +28,10 @@ $script_dir/install/p7zip.sh
 $script_dir/install/ncpa.sh
 
 $script_dir/config/config-backup.sh
+$script_dir/config/generate-csr.sh
+
+
+
 
 $script_dir/install/mysql.sh
 
