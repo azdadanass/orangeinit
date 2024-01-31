@@ -27,7 +27,7 @@ cp $script_dir/script_template/backup-files.sh /app/scripts/backup-files.sh
 sed -i "s/backup_server_ip/$backup_server_ip/g" /app/scripts/backup-files.sh
 sed -i "s/backup_server_user/$backup_server_user/g" /app/scripts/backup-files.sh
 
-ssh-keygen -t rsa -f /app/.ssh/id_rsa -q -P ""
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 ssh-copy-id $backup_server_user@$backup_server_ip
 
 
