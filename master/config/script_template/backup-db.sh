@@ -1,5 +1,5 @@
-log_folder=~/log
-tmp_folder=~/tmp
+log_folder=/app/log
+tmp_folder=/app/tmp
 backup_folder=/backup/db
 
 mkdir -p $log_folder
@@ -14,7 +14,7 @@ backup_file=$backup_folder/orange-`date +%Y-%m-%d-%H:%M`.7z
 
 
 mysqldump \
-	--defaults-extra-file=~/scripts/config.cnf \
+	--defaults-extra-file=/app/scripts/config.cnf \
 	--max_allowed_packet=1G \
 	--default-character-set=utf8 \
 	--single-transaction=TRUE \

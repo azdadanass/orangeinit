@@ -1,5 +1,23 @@
 script_dir=$(dirname $0)
 
+
+if [ ! -d "/app/" ]
+then
+	echo folder /app not found
+	exit
+fi
+
+if [ ! -d "/backup/" ]
+then
+	echo folder /backup not found
+	exit
+fi
+
+
+mkdir -p /app/log
+mkdir -p /app/tmp
+
+
 cp -r $script_dir/scripts ~
 chmod +x ~/scripts/*.sh
 
